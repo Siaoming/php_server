@@ -1,0 +1,7 @@
+---
+# tasks file for php_server
+- name: Enable PHP support for httpd
+  yum: name=php state=present
+  notify: Restart httpd service
+- name: Copy test.php page
+  copy: src=test.php dest=/var/www/html/
